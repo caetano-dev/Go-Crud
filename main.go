@@ -16,6 +16,7 @@ func main() {
 	router.HandleFunc("/users", server.FetchUsers).Methods(http.MethodGet)
 	router.HandleFunc("/users/{id}", server.FetchUser).Methods(http.MethodGet)
 	router.HandleFunc("/users/{id}", server.UpdateUser).Methods(http.MethodPut)
+	router.HandleFunc("/users/{id}", server.DeleteUser).Methods(http.MethodDelete)
 
 	fmt.Println("server go brr")
 	log.Fatal(http.ListenAndServe(":8080", router))
